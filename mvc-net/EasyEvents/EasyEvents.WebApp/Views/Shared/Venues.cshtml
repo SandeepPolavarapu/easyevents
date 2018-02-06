@@ -1,0 +1,30 @@
+﻿@model List<EasyEvents.WebApp.Models.Venue>
+<!-- Recent Works -->
+<div class="headline"><h2>Venues</h2></div>
+<div id="venues" class="row margin-bottom-20">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <div class="thumbnails thumbnail-style thumbnail-kenburn div-cursor" onclick="location.href = '/Vijayawada/Venue/@item.ID/@item.Name.Replace(' ', '-')'">
+                <div class="thumbnail-img">
+                    <div class="overflow-hidden">
+                        <img class="img-responsive" src="@(item.HasPhotos ? "/Images/Venues/"+item.ID+"/1.jpg" : "/Images/noimage.jpg")" alt="" />
+                    </div>
+                </div>
+                <div class="caption">
+                    <h3><a class="hover-effect" href="/Vijayawada/Venue/@item.ID/@item.Name.Replace(' ', '-')">@item.Name</a></h3>
+                    <ul class="list-unstyled who margin-bottom-30">
+                        <li><i class="fa fa-home"></i>@item.Address, @item.Area</li>
+                        @if (!string.IsNullOrWhiteSpace(item.Phone))
+                        {
+                            <li><i class="fa fa-phone"></i>@item.Phone</li>
+                        }
+                        <li><strong>Capacity: @StringFormatter.NumberFormatter(item.Capacity)</strong></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    }   
+</div>
+<!-- End Recent Works -->

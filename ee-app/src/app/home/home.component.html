@@ -1,3 +1,107 @@
-<p>
-  home works!
-</p>
+<div class="body">
+   
+<!--=== Search Block ===-->
+<div class="search-block parallaxBg">
+<div class="container">
+<div class="col-md-6 col-md-offset-3">
+   <h1>
+       Events made easier ...</h1>
+   <br />
+   <br />
+   <br />
+   
+</div>
+</div>
+</div>
+<!--/container-->
+<!--=== End Search Block ===-->
+<!--=== Content ===-->
+<div class="container content">
+<!-- Begin Service Block -->
+<div class="row margin-bottom-40">
+<div class="col-md-4">
+   <div class="easy-block-v3 service-or div-cursor" onclick="location.href = '../vijayawada/catering'">
+       <div class="service-bg">
+       </div>
+       <i class="fa fa-check-circle"></i>
+       <div class="inner-faq-b">
+           <h2>
+               Menu & Packages
+           </h2>
+           <p>
+               Choose from our wide range of menus suitable for you. We allow customization of packages.
+           </p>
+       </div>
+   </div>
+</div>
+<div class="col-md-4">
+   <div class="easy-block-v3 service-or div-cursor" onclick="location.href = '../vijayawada/venue'">
+       <div class="service-bg">
+       </div>
+       <i class="fa fa-globe"></i>
+       <div class="inner-faq-b">
+           <h2>
+               Venues & Function halls</h2>
+           <p>
+               Looking for suitable venue & function hall for your event. Check out our venues catalogue</p>
+       </div>
+   </div>
+</div>
+       
+<div class="col-md-4">
+   <div class="easy-block-v3 service-or div-cursor" onclick="location.href = '../contact'">
+       <div class="service-bg">
+       </div>
+       <i class="fa fa-comment"></i>
+       <div class="inner-faq-b">
+           <h2>
+               Contact
+           </h2>
+           <p>
+               Write to us for enlisting of venue or a catering service
+           </p>
+       </div>
+   </div>
+</div>
+</div>
+<!-- End Service Block -->    
+
+</div>
+
+</div>
+<!--=== Footer ===-->
+
+<!--/footer-->
+<!--=== End Footer ===-->
+<!--=== Copyright ===-->
+
+<!--/copyright-->
+<!--=== End Copyright ===-->
+<!--/wrapper-->    
+
+<script src="/src/assets/scripts/jquery-2.1.3.min.js"></script>
+<script src="/src/assets/scripts/plugins/jquery-migrate-1.2.1.min.js"></script>
+<script src="/src/assets/scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="/src/assets/scripts/bootstrap.min.js"></script>
+<script src="/src/assets/scripts/app.js"></script>
+
+
+<script type="text/javascript" src="/src/assets/scripts/plugins/jquery.parallax.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function () {
+   App.initParallaxBg();
+});
+</script>
+
+<script type="text/javascript">
+jQuery(document).ready(function () {
+App.init();
+});
+$(document).ajaxSend(function (event, request, settings) {
+$('#loading-indicator').modal('show')
+});
+
+$(document).ajaxComplete(function (event, request, settings) {
+$('#loading-indicator').modal('hide')
+});
+</script>

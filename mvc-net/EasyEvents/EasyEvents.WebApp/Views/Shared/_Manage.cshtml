@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <title>@ViewBag.Title</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Function halls Venues Kalyana mandapam Catering Andhra menu Vijayawada">
+    <meta name="author" content="">
+    <meta name="google-site-verification" content="PIEXste71sdiVfAB_0bWGWnhMsGc_QGpLrvKpYiI53s" />
+    <meta name="msvalidate.01" content="8690EF12918132D8F053146C6BDB17FC" />
+    @Styles.Render("~/bundles/css")
+</head>
+<body>
+    <div id="loading-indicator" class="modal fade" tabindex="-1" role="dialog" data-keyboard="false"
+         data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div>
+                        Loading...
+                        <img id="ajax-loader" src="~/images/ajax-loader.gif" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <!--=== Header ===-->
+        <div class="header header-v1">
+            <!-- Topbar -->
+            <div class="topbar-v1 margin-bottom-20">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled top-v1-contacts">
+                                <li><i class="fa fa-envelope"></i>Email: support@easyevents.in</li>
+                                <li><i class="fa fa-phone"></i>Hotline: (+91) @System.Web.Configuration.WebConfigurationManager.AppSettings["Phone"] </li>
+                            </ul>
+                        </div>
+                        @*<div class="col-md-6 topbar">
+                                <ul class="loginbar">
+                                    <li><i class="fa fa-globe"></i><a>Bangalore</a>
+                                        <ul class="lenguages">
+                                            <li><a href="#">Chennai</a></li>
+                                            <li><a href="#">Hyderabad</a></li>
+                                            <li><a href="#">Vijayawada</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>*@
+                    </div>
+                </div>
+            </div>
+            <!-- End Topbar -->
+            <!-- Navbar -->
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            <span class="sr-only">Toggle navigation</span> <span class="fa fa-bars"></span>
+                        </button>
+                        <a class="navbar-brand" href="@Url.Content("~")">
+                            @*<img class="img-responsive" id="logo-header" src="/Images/logo.png" alt="Logo">*@
+                            easy<span class="text-primary">events</span>.in
+                        </a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-responsive-collapse">
+                        <ul class="nav navbar-nav">
+                            @Html.MenuItem("Catering", "Index", "Catering")
+                            @Html.MenuItem("Venues", "Index", "Venue")
+                            @*<li class="@Url.MakeActiveClass("Catering") dropdown"><a href="javascript:void(0);"
+                                    class="dropdown-toggle" data-toggle="dropdown">Catering </a>
+                                    <ul class="dropdown-menu">
+                                        @Html.MenuItem("Caterers", "Caterers", "Catering", true)
+                                        @Html.MenuItem("Packages", "Packages", "Catering", true)
+                                    </ul>
+                                </li>*@
+                            @Html.MenuItem("Contact", "Index", "Contact")
+                        </ul>
+                    </div>
+                    <!--/navbar-collapse-->
+                </div>
+            </div>
+            <!-- End Navbar -->
+        </div>
+        <!--=== End Header ===-->
+        <div class="body">
+            @RenderBody()
+        </div>
+        <!--=== Footer ===-->
+        @*<div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 md-margin-bottom-40">
+                            <!-- About -->
+                            <div class="headline">
+                                <h2>
+                                    About</h2>
+                            </div>
+                            <p class="margin-bottom-25 md-margin-bottom-40">
+                                Unify is an incredibly beautiful responsive Bootstrap Template for corporate and
+                                creative professionals.</p>
+                            <!-- End About -->
+                            <!-- Monthly Newsletter -->
+                            <div class="headline">
+                                <h2>
+                                    Monthly Newsletter</h2>
+                            </div>
+                            <p>
+                                Subscribe to our newsletter and stay up to date with the latest news and deals!</p>
+                            <form class="footer-subsribe">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Email Address">
+                                <span class="input-group-btn">
+                                    <button class="btn-u" type="button">
+                                        Subscribe</button>
+                                </span>
+                            </div>
+                            </form>
+                            <!-- End Monthly Newsletter -->
+                        </div>
+                        <!--/col-md-4-->
+                        <div class="col-md-4 md-margin-bottom-40">
+                            <!-- Recent Blogs -->
+                            <div class="posts">
+                                <div class="headline">
+                                    <h2>
+                                        Recent Blog Entries</h2>
+                                </div>
+                                <dl class="dl-horizontal">
+                                    <dt><a href="#">
+                                        <img src="/Images/vamsi2.jpg" alt="" /></a></dt>
+                                    <dd>
+                                        <p>
+                                            <a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap
+                                                Template</a></p>
+                                    </dd>
+                                </dl>
+                                <dl class="dl-horizontal">
+                                    <dt><a href="#">
+                                        <img src="/Images/vamsi3.jpg" alt="" /></a></dt>
+                                    <dd>
+                                        <p>
+                                            <a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap
+                                                Template</a></p>
+                                    </dd>
+                                </dl>
+                                <dl class="dl-horizontal">
+                                    <dt><a href="#">
+                                        <img src="/Images/vamsi4.jpg" alt="" /></a></dt>
+                                    <dd>
+                                        <p>
+                                            <a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap
+                                                Template</a></p>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <!-- End Recent Blogs -->
+                        </div>
+                        <!--/col-md-4-->
+                        <div class="col-md-4">
+                            <!-- Contact Us -->
+                            <div class="headline">
+                                <h2>
+                                    Contact Us</h2>
+                            </div>
+                            <address class="md-margin-bottom-40">
+                                @System.Web.Configuration.WebConfigurationManager.AppSettings["AddressLine1"]
+                                <br />
+                                @System.Web.Configuration.WebConfigurationManager.AppSettings["AddressLine2"]
+                                <br />
+                                Phone: (+91) @System.Web.Configuration.WebConfigurationManager.AppSettings["Phone"]
+                                <br />
+                                Email: <a href="mailto:support@easyevents.in" class="">support@easyevents.in</a>
+                            </address>
+                            <!-- End Contact Us -->
+                            <!-- Social Links -->
+                            <div class="headline">
+                                <h2>
+                                    Stay Connected</h2>
+                            </div>
+                            <ul class="social-icons">
+                                <li><a href="https://www.facebook.com/easyevents.in" target="_blank" data-original-title="Facebook"
+                                    class="social_facebook"></a></li>
+                                <li><a href="https://twitter.com/EasyeventsIn" target="_blank" data-original-title="Twitter"
+                                    class="social_twitter"></a></li>
+                                <li><a href="https://plus.google.com/+EasyeventsIn" target="_blank" data-original-title="Goole Plus"
+                                    class="social_googleplus"></a></li>
+                            </ul>
+                            <!-- End Social Links -->
+                        </div>
+                        <!--/col-md-4-->
+                    </div>
+                </div>
+            </div>*@
+        <!--/footer-->
+        <!--=== End Footer ===-->
+        <!--=== Copyright ===-->
+        @*<div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                2014 &copy; easyevents.in. ALL Rights Reserved. <a href="#">Privacy Policy</a> | <a
+                                    href="#">Terms of Service</a>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="index.html">
+                                <img class="pull-right" id="logo-footer" src="/Images/logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+        <!--/copyright-->
+        <!--=== End Copyright ===-->
+    </div>
+    <!--/wrapper-->
+    @Scripts.Render("~/bundles/jquerybootstrap")
+    @RenderSection("Scripts", required: false)
+    <script type="text/javascript">
+    jQuery(document).ready(function () {
+        App.init();
+    });
+    $(document).ajaxSend(function (event, request, settings) {
+        $('#loading-indicator').modal('show')
+    });
+
+    $(document).ajaxComplete(function (event, request, settings) {
+        $('#loading-indicator').modal('hide')
+    });
+    </script>
+    <!--[if lt IE 9]>
+        <script src="/Scripts/respond.js"></script>
+    <![endif]-->
+</body>
+</html>

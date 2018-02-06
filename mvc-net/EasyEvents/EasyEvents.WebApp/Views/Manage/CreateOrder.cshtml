@@ -1,0 +1,83 @@
+﻿@model EasyEvents.WebApp.Models.CateringOrder
+<div class="row">
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+    <div class="col-sm-12">
+        @using (Ajax.BeginForm("CreateOrder", "Manage", new AjaxOptions
+                {
+                    HttpMethod = "Post",
+                    UpdateTargetId = "divManage",
+                    InsertionMode = InsertionMode.Replace
+                }))
+        {
+            @Html.ValidationSummary(true)                 
+            @Html.HiddenFor(model => model.ID)
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, "Name", new { @class = "col-sm-3 control-label" })
+
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @placeholder = "Name" })
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+            </div>
+                   
+            <div class="form-group">
+                @Html.LabelFor(model => model.Phone, "Phone", new { @class = "col-sm-3 control-label" })
+
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", @placeholder = "Phone" })
+                    @Html.ValidationMessageFor(model => model.Phone)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, "Email", new { @class = "col-sm-3 control-label" })
+
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Email" })
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Address, "Address", new { @class = "col-sm-3 control-label" })
+
+                <div class="col-sm-9">
+                    @Html.TextAreaFor(model => model.Address, new { @class = "form-control", @rows = 5, @placeholder = "Address" })
+                    @Html.ValidationMessageFor(model => model.Address)
+                </div>
+            </div>  
+            <div class="form-group">
+                @Html.LabelFor(model => model.PackageId, "Package Id", new { @class = "col-sm-3 control-label" })
+
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(model => model.PackageId, new { @class = "form-control", @placeholder = "PackageId" })
+                    @Html.ValidationMessageFor(model => model.PackageId)
+                </div>
+            </div> 
+            <div class="form-group">
+                @Html.LabelFor(model => model.EventDate, "Event Date", new { @class = "col-sm-3 control-label" })
+
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(model => model.EventDate, new { @class = "form-control", @placeholder = "Event Date" })
+                    @Html.ValidationMessageFor(model => model.EventDate)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.IsCancelled, "Cancelled", new { @class = "col-sm-3 control-label" })
+
+                <div class="col-sm-9">
+                    <div class="checkbox">
+                        @Html.CheckBoxFor(model => model.IsCancelled)
+                    </div>
+                    @Html.ValidationMessageFor(model => model.IsCancelled)
+                </div>
+            </div>           
+            <div class="col-xs-12 form-group">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+           
+        }
+    </div>
+</div>
+

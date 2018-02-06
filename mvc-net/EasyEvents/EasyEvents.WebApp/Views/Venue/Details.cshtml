@@ -1,0 +1,120 @@
+﻿@model EasyEvents.WebApp.Models.Venue
+@{int counter = 0;}
+<link rel="stylesheet" href="/Content/plugins/jquery.fancybox.css">
+<div class="container content">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="margin-bottom-30">
+                <div class="headline">
+                    <h2>
+                        Info
+                    </h2>
+                </div>
+            </div>
+            <div>
+                <h3>@Model.Name</h3>
+                <ul class="list-unstyled who margin-bottom-30">
+                    <li><i class="fa fa-home"></i>@Model.Address, @Model.Area, Vijayawada - @Model.Pincode</li>
+                    @if (!string.IsNullOrWhiteSpace(@Model.Phone))
+                    {
+                        <li><i class="fa fa-phone"></i>@Model.Phone</li>
+                    }
+                    <li><strong>Capacity: @StringFormatter.NumberFormatter(@Model.Capacity)</strong></li>
+                </ul>
+            </div>
+            <div class="margin-bottom-30">
+                <div class="headline">
+                    <h2>
+                        Photos
+                    </h2>
+                </div>
+            </div>
+            <div>
+                @if (Model.HasPhotos)
+                {
+                    counter = 0;
+                    string[] files = Directory.GetFiles(Server.MapPath("~/Images/Venues/" + Model.ID));
+                    foreach (string file in files)
+                    {
+                        if (counter == 0)
+                        {
+                            @Html.Raw("<div class=\"row\">")
+                        }
+                        else if (counter > 0 && counter % 4 == 0)
+                        {
+                            @Html.Raw("</div><div class=\"row\">")
+                        }
+                        counter++;
+                        <div class="col-md-3">
+                            <a href="@("/Images/Venues/"+Model.ID+"/" +Path.GetFileName(file))" data-rel="fancybox-button" class="thumbnail fancybox-button zoomer">
+                                <span class="overlay-zoom">
+                                    <img class="img-responsive" src="@("/Images/Venues/" + Model.ID + "/" + Path.GetFileName(file))" alt="" />
+                                    <div class="zoom-icon">
+                                    </div>
+                                </span>
+                            </a>
+                        </div>
+                    }
+                    if (counter != 0)
+                    {
+                        @Html.Raw("</div>")
+                    }
+                }
+                else
+                {
+                    <div>No Photos Available</div>
+                }
+
+            </div>
+            <div class="margin-bottom-30">
+                <div class="headline">
+                    <h2>
+                        Map
+                    </h2>
+                </div>
+            </div>
+            @if (!string.IsNullOrWhiteSpace(Model.Latitude) && !string.IsNullOrWhiteSpace(Model.Longitude))
+            {
+                <div class="google-map-canvas" id="map-canvas">
+                </div>
+                <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDR59OczuXNnTA2xqGL6m1t3jNbCFbBXKI&sensor=false&extension=.js&output=embed"></script>
+                <script type="text/javascript">
+                    google.maps.event.addDomListener(window, 'load', initialize);
+                    function initialize() {
+                        var mapOptions = {
+                            center: new google.maps.LatLng('@Model.Latitude', '@Model.Longitude'),
+                            zoom: 15,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                        };
+                        var map = new google.maps.Map(document.getElementById("map-canvas"),
+                          mapOptions);
+                        // create a marker
+                        var latlng = new google.maps.LatLng('@Model.Latitude', '@Model.Longitude');
+                        var marker = new google.maps.Marker({
+                            position: latlng,
+                            map: map,
+                            title: '@Model.Name'
+                        });
+                    }
+
+                </script>
+            }
+            else
+            {
+                @Html.Raw("<div>Location details not available</div>");
+            }
+        </div>
+        <div class="col-md-offset-1 col-md-2">
+            @{Html.RenderAction("Packages", "Catering");}
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script type="text/javascript" src="/Scripts/plugins/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            $("#cateringpackages .col-md-4").removeClass();
+            App.initFancybox();
+        });
+    </script>
+}

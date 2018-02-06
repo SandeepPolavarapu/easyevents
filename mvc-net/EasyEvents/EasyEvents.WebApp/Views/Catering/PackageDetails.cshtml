@@ -1,0 +1,63 @@
+﻿@model EasyEvents.WebApp.Models.CateringPackage
+@{
+    ViewBag.Title = "Catering " + @Model.Name + " Details - Vijayawada";
+}
+<div class="container content">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="margin-bottom-30">
+                <div class="headline">
+                    <h2>
+                        Caterer
+                    </h2>
+                </div>
+            </div>
+            <div>
+                <h3>
+                    <a href="https://www.facebook.com/vamsievents/" target="_blank">Vamsi Caterers</a>
+                </h3>
+                <ul class="list-unstyled who margin-bottom-30">
+                    <li><i class="fa fa-home"></i>@System.Web.Configuration.WebConfigurationManager.AppSettings["AddressLine1"] , @System.Web.Configuration.WebConfigurationManager.AppSettings["AddressLine2"]</li>
+                    <li><i class="fa fa-phone"></i>(+91) @System.Web.Configuration.WebConfigurationManager.AppSettings["Phone"] </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="margin-bottom-30">
+                <div class="headline">
+                    <h2>
+                        @Model.Name 
+                    </h2>
+                    <h2 class="pull-right"><i class="fa fa-rupee"></i>@StringFormatter.PriceFormatter(Model.Price)</h2>
+                </div>
+            </div>
+            <div>
+                <dl class="dl-horizontal">
+                    @foreach (var menu in Model.Menu)
+                    {
+                        if (menu.Item1 == 0)
+                        {
+                            <dt> @menu.Item2</dt>
+                        }
+                        else
+                        {
+                            <dt>Choice of @menu.Item1&nbsp;@menu.Item2</dt>
+                        }
+                        <dd>@string.Join(", ", menu.Item3)</dd>
+                    }
+                </dl>
+            </div>
+            @*<small><em>Min PAX: @StringFormatter.NumberFormatter(@Model.MinPerson)</em></small>*@
+        </div>
+        <div class="col-md-3">
+            @{Html.RenderPartial("~/Views/Shared/Addons.cshtml");}
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            $("#addons .col-md-4").removeClass();
+        });
+    </script>
+}

@@ -1,0 +1,96 @@
+﻿@model List<EasyEvents.WebApp.Models.CateringPackage>
+@{
+    ViewBag.Title = "Catering in Vijayawada";
+}
+@{int i =0;}
+<link rel="stylesheet" href="/Content/page_pricing.css">
+<div class="container content">
+    <div class="row">
+        @*<div class="col-md-3">
+                <div class="margin-bottom-30">
+                    <div class="headline">
+                        <h2>
+                            Filter Packages</h2>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="q">
+                        Caterer or Location</label>
+                    <input type="text" class="form-control" id="q" placeholder="caterer or location">
+                </div>
+            </div>*@
+        <div class="col-md-12">
+            <div class="margin-bottom-30">
+                <div class="headline">
+                    <h2>
+                        Packages
+                    </h2>
+                </div>
+            </div>
+            <div>
+                <!-- Pricing Rounded -->
+                <div class="row margin-bottom-40 pricing-rounded">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-3">
+                            <div class="pricing hover-effect">                                
+                                <div class="pricing-head">
+                                    <h3>
+                                        @item.Name
+                                    </h3>
+                                    <h4>
+                                        <i class="fa fa-rupee"></i><i>@StringFormatter.PriceFormatter(item.Price)</i><span>Per Plate</span>
+                                    </h4>
+                                    <h6>
+                                        Package Contains <b>@item.ItemsCount</b> items
+                                    </h6>
+                                </div>
+                                @{i = 0;}
+                                <ul class="pricing-content list-unstyled">
+                                    @foreach (var menu in item.Menu)
+                                    {
+
+
+                                        <li class="@(i % 2 == 0 ? "bg-color" : "")">
+                                            @if (menu.Item1 == 0)
+                                            {
+                                                @menu.Item2
+                                            }
+                                            else
+                                            {
+                                                <span class="pull-right">@menu.Item1</span>@menu.Item2
+                                            }
+                                        </li>
+                                        i++;
+                                    }
+                                    <li><b>+ @item.RemainingCategoryCount more varieties</b></li>
+                                </ul>
+                                <div class="pricing-footer">                                    
+                                    <p><a class="btn-u" href="~/Vijayawada/Catering/@item.Name">View Details</a></p>
+                                    @*<small><em>Min PAX: @StringFormatter.NumberFormatter(item.MinPerson)</em></small>*@
+                                </div>
+                            </div>
+                        </div>
+                    }                    
+                </div>
+                <!--/row-->
+                <!-- End Pricing Rounded -->
+                <div class="margin-bottom-30">
+                </div>
+            </div>            
+        </div>
+        </div>
+        <div class="row">
+            @{Html.RenderPartial("~/Views/Shared/Addons.cshtml");}
+        @*<div class="col-md-2 pull-right">
+            @{Html.RenderAction("Venues", "Venue");}
+        </div>*@
+    </div>
+</div>
+@section Scripts {
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            $("#venues .col-md-4").removeClass();
+        });
+    </script>
+}

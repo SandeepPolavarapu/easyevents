@@ -12,10 +12,10 @@ import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },  
-  { path: ':name/venue', component: VenueComponent },
-  { path: ':name/venue/:id', component: VenueDetailComponent },  
-  { path: ':name/catering', component: CateringComponent },
-  { path: ':name/catering/:id', component: PackageDetailComponent },  
+  { path: ':city/venue', component: VenueComponent },
+  { path: ':city/venue/:id/:name', component: VenueDetailComponent },  
+  { path: ':city/catering', component: CateringComponent },
+  { path: ':city/catering/:id', component: PackageDetailComponent },  
   { path: 'contact', component: ContactComponent }
 ];
 

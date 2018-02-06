@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "Manage";
+}
+<div id="loading-indicator" class="modal fade" tabindex="-1" role="dialog" data-keyboard="false"
+    data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div>
+                    Loading... 
+                    <img id="ajax-loader" src="~/images/ajax-loader.gif" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h3>Manage</h3>
+
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-2">
+        <div class="panel panel-primary quick-shortcut">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <span class="glyphicon glyphicon-bookmark"></span>Quick Shortcuts</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6">
+                        <a data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#divManage"
+                            href="/Manage/CreateOrder" class="btn btn-primary btn-lg" role="button">Create<br />
+                            Order</a>
+                        <a data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#divManage"
+                            href="/Manage/OrderList?typeid=1" class="btn btn-primary btn-lg" role="button">Future<br />
+                            Order</a>
+                        <a data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#divManage"
+                            href="/Manage/OrderList?typeid=2" class="btn btn-primary btn-lg" role="button">Completed<br />
+                            Order</a>
+                        <a data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#divManage"
+                            href="/Manage/OrderList?typeid=3" class="btn btn-primary btn-lg" role="button">Cancelled<br />
+                            Order</a>
+                    </div>
+                    <div class="col-xs-6 col-sm-6">
+                        <a data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#divManage"
+                            href="/Manage/CreateReview" class="btn btn-primary btn-lg" role="button">Create<br />
+                            Review</a>
+                        <a data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#divManage"
+                            href="/Manage/OrderList?typeid=4" class="btn btn-primary btn-lg" role="button">Pending<br />
+                            Review</a>
+                        <a data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#divManage"
+                            href="/Manage/ReviewList" class="btn btn-primary btn-lg" role="button">Completed<br />
+                            Review</a>
+                        <a data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#divManage"
+                            href="/Manage/ContactUs" class="btn btn-primary btn-lg" role="button">View<br />
+                            Request</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="divManage">
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ajaxSend(function (event, request, settings) {
+            $('#loading-indicator').modal('show')
+        });
+
+        $(document).ajaxComplete(function (event, request, settings) {
+            $('#loading-indicator').modal('hide')
+        });
+    </script>
+}

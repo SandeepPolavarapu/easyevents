@@ -1,8 +1,60 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div id="loading-indicator" class="modal fade" tabindex="-1" role="dialog" data-keyboard="false"
+data-backdrop="static">
+<div class="modal-dialog">
+   <div class="modal-content">
+       <div class="modal-body">
+           <div>
+               Loading...
+               <img id="ajax-loader" src="assets/images/ajax-loader.gif" />
+           </div>
+       </div>
+   </div>
 </div>
+</div>
+<div class="wrapper">
+<!--=== Header ===-->
+<div class="header header-v1">
+   <!-- Topbar -->
+   <div class="topbar-v1 margin-bottom-20">
+       <div class="container">
+           <div class="row">
+               <div class="col-md-6">
+                   <ul class="list-unstyled top-v1-contacts">
+                       <li><i class="fa fa-envelope"></i>Email: support@easyevents.in</li>
+                       <li><i class="fa fa-phone"></i>Hotline: (+91) 8143776677 </li>
+                   </ul>
+               </div>
+               
+           </div>
+       </div>
+   </div>
+   <!-- End Topbar -->
+   <!-- Navbar -->
+   <div class="navbar navbar-default" role="navigation">
+       <div class="container">
+           <!-- Brand and toggle get grouped for better mobile display -->
+           <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                   <span class="sr-only">Toggle navigation</span> <span class="fa fa-bars"></span>
+               </button>
+               <a class="navbar-brand" href="/">
+                   
+                   easy<span class="text-primary">events</span>.in
+               </a>
+           </div>
+           <!-- Collect the nav links, forms, and other content for toggling -->
+           <div class="collapse navbar-collapse navbar-responsive-collapse">
+               <ul class="nav navbar-nav">                            
+                   <li><a href="/vijayawada/catering">Catering</a></li>
+                   <li><a href="/vijayawada/venue">Venues</a></li>
+                   
+                   <li><a href="/contact">Contact</a></li>
+               </ul>
+           </div>
+           <!--/navbar-collapse-->
+       </div>
+   </div>
+   <!-- End Navbar -->
+</div>
+<!--=== End Header ===-->
 <router-outlet></router-outlet>

@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "Easy Events - Venues, Function halls, Catering in Vijayawada";
+}
+<!--=== Search Block ===-->
+<div class="search-block parallaxBg">
+    <div class="container">
+        <div class="col-md-6 col-md-offset-3">
+            <h1>
+                Events made easier ...</h1>
+            <br />
+            <br />
+            <br />
+            @*<div class="input-group">
+                <input type="text" class="form-control" placeholder="Search words with regular expressions ...">
+                <span class="input-group-btn">
+                    <button class="btn-u" type="button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+            <form action="" class="sky-form page-search-form">
+            <div class="inline-group">
+                <label class="checkbox">
+                    <input type="checkbox" name="checkbox-inline" checked><i></i>Recent</label>
+                <label class="checkbox">
+                    <input type="checkbox" name="checkbox-inline"><i></i>Related</label>
+                <label class="checkbox">
+                    <input type="checkbox" name="checkbox-inline"><i></i>Popular</label>
+                <label class="checkbox">
+                    <input type="checkbox" name="checkbox-inline"><i></i>Most Common</label>
+            </div>
+            </form>*@
+        </div>
+    </div>
+</div>
+<!--/container-->
+<!--=== End Search Block ===-->
+<!--=== Content ===-->
+<div class="container content">
+    <!-- Begin Service Block -->
+    <div class="row margin-bottom-40">
+        <div class="col-md-4">
+            <div class="easy-block-v3 service-or div-cursor" onclick="location.href = '../Vijayawada/Catering'">
+                <div class="service-bg">
+                </div>
+                <i class="fa fa-check-circle"></i>
+                <div class="inner-faq-b">
+                    <h2>
+                        Menu & Packages
+                    </h2>
+                    <p>
+                        Choose from our wide range of menus suitable for you. We allow customization of packages.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="easy-block-v3 service-or div-cursor" onclick="location.href = '../Vijayawada/Venue'">
+                <div class="service-bg">
+                </div>
+                <i class="fa fa-globe"></i>
+                <div class="inner-faq-b">
+                    <h2>
+                        Venues & Function halls</h2>
+                    <p>
+                        Looking for suitable venue & function hall for your event. Check out our venues catalogue</p>
+                </div>
+            </div>
+        </div>
+        @*<div class="col-md-4">
+            <div class="easy-block-v3 service-or div-cursor" onclick="location.href = '../Vijayawada/Catering/Caterers'">
+                <div class="service-bg">
+                </div>
+                <i class="fa fa-cutlery"></i>
+                <div class="inner-faq-b">
+                    <h2>
+                        Caterers
+                    </h2>
+                    <p>
+                        Looking for suitable caterer for your event. Check out our caterers catalogue.
+                    </p>
+                </div>
+            </div>
+        </div>*@        
+        <div class="col-md-4">
+            <div class="easy-block-v3 service-or div-cursor" onclick="location.href = '../Contact'">
+                <div class="service-bg">
+                </div>
+                <i class="fa fa-comment"></i>
+                <div class="inner-faq-b">
+                    <h2>
+                        Contact
+                    </h2>
+                    <p>
+                        Write to us for enlisting of venue or a catering service
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Service Block -->    
+    @*@{Html.RenderAction("Packages","Catering");}
+    @{Html.RenderAction("Venues","Venue");}*@
+</div>
+@section Scripts {
+    <script type="text/javascript" src="/Scripts/plugins/jquery.parallax.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            App.initParallaxBg();
+        });
+    </script>
+}

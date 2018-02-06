@@ -1,0 +1,133 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<link rel="stylesheet" href="/Content/page_pricing.css">
+<div class="container content">
+    <div class="row">
+        @*<div class="col-md-3">
+            <div class="margin-bottom-30">
+                <div class="headline">
+                    <h2>
+                        Filter Packages</h2>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="q">
+                    Caterer or Location</label>
+                <input type="text" class="form-control" id="q" placeholder="caterer or location">
+            </div>
+        </div>*@
+        <div class="col-md-9">
+            <div class="margin-bottom-30">
+                <div class="headline">
+                    <h2>
+                        Packages</h2>
+                </div>
+            </div>
+            <div>
+                <!-- Pricing Rounded -->
+                <div class="row margin-bottom-40 pricing-rounded">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="pricing hover-effect">
+                            <div class="sticker-right">
+                                15%<i class="fa fa-gift"></i></div>
+                            <div class="pricing-head">
+                                <h3>
+                                    Begginer</h3>
+                                <h4>
+                                    <i>$</i>5<i>.49</i><span>Per Month</span></h4>
+                                <h6>
+                                    Labore et dolore magnaras</h6>
+                            </div>
+                            <ul class="pricing-content list-unstyled">
+                                <li class="bg-color"><i class="fa fa-location-arrow"></i>Free customisation<span><i
+                                    class="fa fa-check"></i></span></li>
+                                <li><i class="fa fa-inbox"></i>24 hour support</li>
+                                <li class="bg-color"><i class="fa fa-globe"></i>10 GB Disckspace</li>
+                                <li><i class="fa fa-cloud-upload"></i>Cloud Storage</li>
+                                <li class="bg-color"><i class="fa fa-cloud"></i>Online Protection</li>
+                            </ul>
+                            <div class="pricing-footer">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cloud Storage magna psum
+                                    olor.</p>
+                                <a class="btn-u" href="~/Vijayawada/Catering/PackageDetails"><i class="fa fa-shopping-cart"></i>Purchase Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="pricing hover-effect">
+                            <div class="sticker-right">
+                                30%<i class="fa fa-gift"></i></div>
+                            <div class="pricing-head">
+                                <h3>
+                                    Unify Pro</h3>
+                                <h4>
+                                    <i>$</i>8<i>.69</i> <span>Per Month</span></h4>
+                                <h6>
+                                    Labore et dolore magnaras</h6>
+                            </div>
+                            <ul class="pricing-content list-unstyled">
+                                <li class="bg-color"><i class="fa fa-location-arrow"></i>Free customisation <span><i
+                                    class="fa fa-check"></i></span></li>
+                                <li><i class="fa fa-inbox"></i>24 hour support<span><i class="fa fa-check"></i></span></li>
+                                <li class="bg-color"><i class="fa fa-globe"></i>10 GB Disckspace</li>
+                                <li><i class="fa fa-cloud-upload"></i>Cloud Storage</li>
+                                <li class="bg-color"><i class="fa fa-cloud"></i>Online Protection</li>
+                            </ul>
+                            <div class="pricing-footer">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cloud Storage magna psum
+                                    olor.</p>
+                                <a class="btn-u" href="~/Vijayawada/Catering/PackageDetails"><i class="fa fa-shopping-cart"></i>Purchase Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="pricing hover-effect">
+                            <div class="sticker-right">
+                                50%<i class="fa fa-gift"></i></div>
+                            <div class="pricing-head">
+                                <h3>
+                                    Premium</h3>
+                                <h4>
+                                    <i>$</i>69<i>.99</i><span>Per Month</span></h4>
+                                <h6>
+                                    Labore et dolore magnaras
+                                </h6>
+                            </div>
+                            <ul class="pricing-content list-unstyled">
+                                <li class="bg-color"><i class="fa fa-location-arrow"></i>Free customisation <span><i
+                                    class="fa fa-check"></i></span></li>
+                                <li><i class="fa fa-inbox"></i>24 hour support<span><i class="fa fa-check"></i></span></li>
+                                <li class="bg-color"><i class="fa fa-globe"></i>10 GB Disckspace<span><i class="fa fa-check"></i></span></li>
+                                <li><i class="fa fa-cloud-upload"></i>Cloud Storage</li>
+                                <li class="bg-color"><i class="fa fa-cloud"></i>Online Protection</li>
+                            </ul>
+                            <div class="pricing-footer">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cloud Storage magna psum
+                                    olor.</p>
+                                <a class="btn-u" href="~/Vijayawada/Catering/PackageDetails"><i class="fa fa-shopping-cart"></i>Purchase Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/row-->
+                <!-- End Pricing Rounded -->
+                <div class="margin-bottom-30">
+                </div>                
+            </div>
+        </div>
+        <div class="col-md-2 pull-right">
+            @{Html.RenderPartial("~/Views/Shared/Venues.cshtml");}
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            $("#venues .col-md-4").removeClass();            
+        });
+    </script>
+}

@@ -1,0 +1,96 @@
+﻿@model List<EasyEvents.WebApp.Models.Venue>
+@{
+    ViewBag.Title = "Function halls, Kalyana mandapam, Venues in Vijayawada";
+}
+@{bool isMap = Request.QueryString["view"] == "map" ? true : false;}
+<div class="container content">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="margin-bottom-30">
+                <div class="headline">
+                    <h2>
+                        Filter Venues
+                    </h2>
+                </div>
+            </div>
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "venueForm" }))
+            {
+                <div class="form-group">
+                    <label for="q">
+                        Venue or Location
+                    </label>
+                    <input type="text" class="form-control" id="q" name="q" value="@(ViewBag.q)" placeholder="venue or location">
+                </div>
+            }
+        </div>
+        <div class="col-md-8">
+            <div class="margin-bottom-30">
+                <div class="headline">
+                    <h2>
+                        Venues
+                    </h2>
+
+                    @*@if (isMap)
+                    {
+                        <a href=" ?view=list"><span class="pull-right label label-blue rounded"><i class="icon-custom rounded-2x icon-sm icon-bg-blue fa fa-list"></i>List View</span></a>
+                    }
+                    else
+                    {
+                        <a href="?view=map"><span class="pull-right label label-blue rounded"><i class="icon-custom rounded-2x icon-sm icon-bg-blue fa fa-map-marker"></i>Map View</span></a>
+                    }*@
+
+                </div>
+            </div>
+            @*@if (isMap)
+            {
+                <div id="map" class="map margin-bottom-50"></div>
+            }
+            else
+            {*@
+                <div id="venueList">
+                    @{Html.RenderPartial("_VenueList", Model, ViewData);}
+                </div>                
+            @*}*@
+
+            <!--/col-md-10-->
+        </div>
+        <div class="col-md-2">
+            @{Html.RenderAction("Packages", "Catering");}
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            $("#cateringpackages .col-md-4").removeClass();
+        });
+        function RemoveLink() {
+            $('#moreLink').remove();
+            return false;
+        }
+        $('#q').change(function () {           
+            $('#venueForm').submit();
+        });
+    </script>
+    @if (isMap)
+    {
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+        <script type="text/javascript" src="/Scripts/plugins/gmap.js"></script>
+        <script type="text/javascript">
+            var map;
+            jQuery(document).ready(function () {
+                map = new GMaps({
+                    div: '#map',
+                    lat: 40.748866,
+                    lng: -73.988366
+                });
+
+                var marker = map.addMarker({
+                    lat: 40.748866,
+                    lng: -73.988366,
+                    title: 'Company, Inc.'
+                });
+            });
+        </script>
+    }
+}

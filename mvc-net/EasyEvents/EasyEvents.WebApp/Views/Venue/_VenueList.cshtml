@@ -1,0 +1,65 @@
+﻿@model List<EasyEvents.WebApp.Models.Venue>
+@{int counter = 0;}
+@foreach (var item in Model)
+{
+    if (counter == 0)
+    {
+        @Html.Raw("<div class=\"row\">")
+    }
+    else if (counter > 0 && counter % 3 == 0)
+    {
+        @Html.Raw("</div><div class=\"row\">")
+    }
+    counter++;
+            <div class="col-md-4 col-sm-12">
+                <div class="thumbnails thumbnail-style thumbnail-kenburn">
+                    <div class="thumbnail-img">
+                        <div class="overflow-hidden">
+                            <img class="img-responsive" src="@(item.HasPhotos ? "/Images/Venues/"+item.ID+"/1.jpg" : "/Images/noimage.jpg")" alt="" />
+                        </div>
+                        <a class="btn-more hover-effect" href="../Vijayawada/Venue/@item.ID/@item.Name.Replace(' ', '-')">view details</a>
+                    </div>
+                    <div class="caption">
+                        <h3><a class="hover-effect" href="../Vijayawada/Venue/@item.ID/@item.Name.Replace(' ', '-')">@item.Name</a></h3>
+                        <ul class="list-unstyled who margin-bottom-30">
+                            <li><i class="fa fa-home"></i>@item.Address, @item.Area</li>
+                            @if (!string.IsNullOrWhiteSpace(item.Phone))
+                            {
+                            <li><i class="fa fa-phone"></i>@item.Phone</li>                     
+                            }       
+                            @if (!string.IsNullOrWhiteSpace(item.Latitude) && !string.IsNullOrWhiteSpace(item.Longitude))
+                            {
+                            <li><a href="http://maps.google.com/?q=@item.Latitude,@item.Longitude" target="_blank"><span class="label rounded label-light"><i class="fa fa-map-marker"></i>Map It</span></a></li>
+                            }                                                        
+                            <li><strong>Capacity: @StringFormatter.NumberFormatter(item.Capacity)</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>           
+}
+@if (counter != 0)
+    {
+    @Html.Raw("</div>")
+    }
+    else
+    {
+    @Html.Raw("<div>Sorry, no results found</div>")
+    }
+
+@if (ViewData["moreUrl"] != null)
+{
+    <div id="moreLink">
+        <div class="row vertical-center-row">
+            <div class="col-lg-12">
+                <div class="row ">
+                    <div class="col-md-8 col-md-offset-4 animated fadeInRight">
+                        <a onclick="RemoveLink()" class="btn-u btn-u-lg" data-ajax="true" data-ajax-method="GET" data-ajax-mode="after" data-ajax-update="#venueList" href='@ViewData["moreUrl"]'>
+                            Show More Venues (@ViewData["remainingCount"])
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
