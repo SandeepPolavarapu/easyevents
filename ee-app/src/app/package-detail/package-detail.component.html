@@ -1,3 +1,139 @@
-<p>
-  package-detail works!
-</p>
+<div class="container content">
+  <div class="row">
+      <div class="col-md-2">
+          <div class="margin-bottom-30">
+              <div class="headline">
+                  <h2>
+                      Caterer
+                  </h2>
+              </div>
+          </div>
+          <div>
+              <h3>
+                  <a href="https://www.facebook.com/vamsievents/" target="_blank">Vamsi Caterers</a>
+              </h3>
+              <ul class="list-unstyled who margin-bottom-30">
+                  <li><i class="fa fa-home"></i>New Pantakaluva Road, Opp Nagarjuna Hospital, Kanuru, Vijayawada</li>
+                  <li><i class="fa fa-phone"></i>(+91) 8143776677</li>
+              </ul>
+          </div>
+      </div>
+      <div class="col-md-7">
+          <div class="margin-bottom-30">
+              <div class="headline">
+                  <h2>
+                     {{package.Name}}
+                  </h2>
+                  <h2 class="pull-right"><i class="fa fa-rupee"></i>{{package.Price}}</h2>
+              </div>
+          </div>
+          <div>
+              <dl class="dl-horizontal">                  
+                  <!-- @foreach (var menu in Model.Menu)
+                  {
+                      if (menu.Item1 == 0)
+                      {
+                          <dt> @menu.Item2</dt>
+                      }
+                      else
+                      {
+                          <dt>Choice of @menu.Item1&nbsp;@menu.Item2</dt>
+                      }
+                      <dd>@string.Join(", ", menu.Item3)</dd>
+                  } -->
+              </dl>
+          </div>          
+      </div>
+      <div class="col-md-3">
+        <div class="headline">
+          <h2>
+              Add-ons
+          </h2>
+      </div>
+      <div id="addons">
+          <div class="row">
+              <div>
+                  <div class="servive-block servive-block-u">
+                      <h2 class="heading-md">
+                          Mocktail Counter
+                      </h2>
+                      <i class="icon-custom icon-lg rounded-x icon-color-light fa fa-rupee">20</i>
+                      <p>
+                          Choice of any 4:
+                          Blue Lagan, Green Lady, Virgin Mojito, Strawberry Punch, Grape Delight
+                      </p>
+                      <small><em>Min PAX: 800</em></small>
+                  </div>
+              </div>
+              <div>
+                  <div class="servive-block servive-block-u">
+                      <h2 class="heading-md">
+                          Rajasthan Counter
+                      </h2>
+                      <i class="icon-custom icon-lg rounded-x icon-color-light fa fa-rupee">40</i>
+                      <p>
+                          Choice of any 5:
+                          Mirchi Vada, Mint Vada, Coriander Vada, Dahi Vada, Noddle Pop, Money Bag
+                      </p>
+                      <small><em>Min PAX: 800</em></small>
+                  </div>
+              </div>
+              <div>
+                  <div class="servive-block servive-block-u">
+                      <h2 class="heading-md">
+                          Chat Counter
+                      </h2>
+                      <i class="icon-custom icon-lg rounded-x icon-color-light fa fa-rupee">40</i>
+                      <p>
+                          Choice of any 4:
+                          Bhel Puri, Pani Puri, Samosa Chat, Pav Bajji, Allu Tikki, Tomato Kachodi, Dahi Puri
+                      </p>
+                      <small><em>Min PAX: 1000</em></small>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div>
+                  <div class="servive-block servive-block-blue">
+                      <h2 class="heading-md">
+                          Other Counters
+                      </h2>
+                      <i class="icon-custom icon-lg rounded-x icon-color-light fa fa-rupee">60</i>
+                      <p>
+                          Chocolate Fountain, Sugar Candy, American Sweet Corn, Popcorn
+                      </p>
+                      <small><em>Min PAX: 1000</em></small>
+                  </div>
+              </div>
+              <div>
+                  <div class="servive-block servive-block-blue">
+                      <h2 class="heading-md">
+                          Domino's Counter
+                      </h2>
+                      <i class="icon-custom icon-lg rounded-x icon-color-light fa fa-rupee">70</i>
+                      <p>
+                          Choice of any 3:
+                          Margherita, Cheese and Tomato, Veg Hawaiian Delight, Spicy Triple Tango, Country Special
+                      </p>
+                      <small><em>Min PAX: 1500</em></small>
+                  </div>
+              </div>
+              <div>
+                  <div class="servive-block servive-block-blue">
+                      <h2 class="heading-md">
+                          Chinese Counter
+                      </h2>
+                      <i class="icon-custom icon-lg rounded-x icon-color-light fa fa-rupee">80</i>
+                      <p>
+                          Choice of any 4:
+                          Veg Soft/Fried Noodles, Veg Manchuria, Fried Rice, Paneer Corn, Veg Dumpling, Corn Cubes, Mongolia Sizzler, Veg Tawa Sizzler, Button Vegetables
+                      </p>
+                      <small><em>Min PAX: 1500</em></small>
+                  </div>
+              </div>
+          </div>
+      
+      </div>
+      </div>
+  </div>
+</div>

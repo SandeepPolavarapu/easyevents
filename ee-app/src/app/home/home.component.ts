@@ -17,9 +17,9 @@ export class HomeComponent implements OnInit {
     {'Id':3, 'Name':'123 Function hall', 'Photos':'/assets/images/noimage.jpg','Address':'ancd ad','Area':'dhbh','Phone':'989','Capacity':'100'}
   ]
   packages = [
-    {'Id':1,'Name':'Package 1','Price':'123','ItemsCount':'10'},
-    {'Id':2,'Name':'Package 2','Price':'234','ItemsCount':'15'},
-    {'Id':3,'Name':'Package 3','Price':'345','ItemsCount':'20'}
+    {'Id':1,'Name':'Package 1','Price':200,'ItemsCount':16},
+    {'Id':2,'Name':'Package 2','Price':250,'ItemsCount':22},
+    {'Id':3,'Name':'Package 3','Price':300,'ItemsCount':29}
   ]
 
   showPackage(id){

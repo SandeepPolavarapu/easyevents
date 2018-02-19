@@ -1,3 +1,36 @@
-<p>
-  venue works!
-</p>
+<div class="container content">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="margin-bottom-30">
+                <div class="headline">
+                    <h2>
+                        Filter Venues
+                    </h2>
+                </div>
+            </div>            
+                <div class="form-group">
+                    <label for="q">
+                        Venue or Location
+                    </label>
+                    <input type="text" class="form-control" id="q" name="q" value="" placeholder="venue or location">
+                </div>           
+        </div>
+        <div class="col-md-8">
+            <div class="margin-bottom-30">
+                <div class="headline">
+                    <h2>
+                        Venues
+                    </h2>                  
+
+                </div>
+            </div>            
+                <div id="venueList">
+                    <!-- @{Html.RenderPartial("_VenueList", Model, ViewData);} -->
+                </div>          
+           <!--/col-md-10-->
+        </div>
+        <div class="col-md-2">
+            <!-- @{Html.RenderAction("Packages", "Catering");} -->
+        </div>
+    </div>
+</div>
