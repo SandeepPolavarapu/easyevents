@@ -10,6 +10,8 @@ import { CateringComponent } from './catering/catering.component';
 import { PackageDetailComponent } from './package-detail/package-detail.component';
 import { ContactComponent } from './contact/contact.component';
 
+import { AgmCoreModule } from '@agm/core';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },  
   { path: ':city/venue', component: VenueComponent },
@@ -36,7 +38,10 @@ class LowerCaseUrlSerializer extends DefaultUrlSerializer {
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDR59OczuXNnTA2xqGL6m1t3jNbCFbBXKI'
+    })
   ],
   providers: [
     {

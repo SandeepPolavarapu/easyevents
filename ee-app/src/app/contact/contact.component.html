@@ -1,3 +1,32 @@
-<p>
-  contact works!
-</p>
+<div class="container content">
+    <div class="row margin-bottom-30">
+        <div class="col-md-9 mb-margin-bottom-30">
+            <div class="headline">
+                <h2>
+                    Map Location
+                </h2>
+            </div>
+            <div id="map" class="map margin-bottom-50">
+                <agm-map [latitude]="lat" [longitude]="lng" [zoom]=18>
+                    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                  </agm-map>
+            </div>
+            </div>
+            <!--/col-md-9-->
+            <div class="col-md-3">
+                <!-- Contacts -->
+                <div class="headline">
+                    <h2>
+                        Contacts
+                    </h2>
+                </div>
+                <ul class="list-unstyled who margin-bottom-30">
+                    <li><a href="#"><i class="fa fa-home"></i>Opp Nagarjuna Hospital, New Pantakaluva Road, Kanuru, Vijayawada </a></li>
+                    <li><a href="#"><i class="fa fa-envelope"></i>easyevents.in@gmail.com</a></li>
+                    <li><a href="#"><i class="fa fa-phone"></i>(+91) 8143776677 </a></li>
+                    <li><a href="http://www.facebook.com/easyevents.in" target="_blank"><i class="fa fa-facebook"></i>http://www.facebook.com/easyevents.in</a></li>
+                </ul>
+              </div>
+              <!--/col-md-3-->
+          </div>
+        </div>

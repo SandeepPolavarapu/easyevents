@@ -13,7 +13,7 @@
                   <a href="https://www.facebook.com/vamsievents/" target="_blank">Vamsi Caterers</a>
               </h3>
               <ul class="list-unstyled who margin-bottom-30">
-                  <li><i class="fa fa-home"></i>New Pantakaluva Road, Opp Nagarjuna Hospital, Kanuru, Vijayawada</li>
+                  <li><i class="fa fa-home"></i>Opp Nagarjuna Hospital, New Pantakaluva Road, Kanuru, Vijayawada</li>
                   <li><i class="fa fa-phone"></i>(+91) 8143776677</li>
               </ul>
           </div>
@@ -28,19 +28,14 @@
               </div>
           </div>
           <div>
-              <dl class="dl-horizontal">                  
-                  <!-- @foreach (var menu in Model.Menu)
-                  {
-                      if (menu.Item1 == 0)
-                      {
-                          <dt> @menu.Item2</dt>
-                      }
-                      else
-                      {
-                          <dt>Choice of @menu.Item1&nbsp;@menu.Item2</dt>
-                      }
-                      <dd>@string.Join(", ", menu.Item3)</dd>
-                  } -->
+              <dl class="dl-horizontal">
+                  <ng-template ngFor let-menu [ngForOf]="package.Menu">
+                    <dt>
+                        <span *ngIf="menu.Item1 == 0">{{menu.Item2}}</span>
+                        <span *ngIf="menu.Item1 != 0">Choice of {{menu.Item1}}&nbsp;{{menu.Item2}}</span>
+                    </dt>  
+                    <dd>{{menu.Item3}}</dd>
+                    </ng-template>                
               </dl>
           </div>          
       </div>
