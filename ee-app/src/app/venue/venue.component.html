@@ -35,12 +35,12 @@
                                         <div class="overflow-hidden">
                                             <img class="img-responsive" src="{{item.Photos}}" alt="" />
                                         </div>
-                                        <a class="btn-more hover-effect" href="../vijayawada/venue/{{item.Id}}/{{item.Name}}">view details</a>
+                                        <a class="btn-more hover-effect" href="../vijayawada/venue/{{item.Id}}/{{item.Name | lowercase | spacewithdash}}">view details</a>
                                     </div>
                                     <div class="caption">
-                                        <h3><a class="hover-effect" href="../vijayawada/venue/{{item.Id}}/{{item.Name}}">{{item.Name}}</a></h3>
+                                        <h3><a class="hover-effect" href="../vijayawada/venue/{{item.Id}}/{{item.Name | lowercase | spacewithdash}}">{{item.Name}}</a></h3>
                                         <ul class="list-unstyled who margin-bottom-30">
-                                            <li><i class="fa fa-home"></i>{{i}} {{item.Address}}, {{item.Area}}</li>
+                                            <li><i class="fa fa-home"></i>{{item.Address}}, {{item.Area}}</li>
                                             <li *ngIf="item.Phone!=''"><i class="fa fa-phone"></i>{{item.Phone}}</li>    
                                             <li *ngIf="item.Latitude!=''"><a href="http://maps.google.com/?q={{item.Latitude}},{{item.Longitude}}" target="_blank"><span class="label rounded label-light"><i class="fa fa-map-marker"></i>Map It</span></a></li>
                                             <li><strong>Capacity: {{item.Capacity}}</strong></li>                                            

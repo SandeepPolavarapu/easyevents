@@ -11,6 +11,7 @@ import { PackageDetailComponent } from './package-detail/package-detail.componen
 import { ContactComponent } from './contact/contact.component';
 
 import { AgmCoreModule } from '@agm/core';
+import { SpaceWithDashPipe} from './venue/space-with-dash.pipe';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },  
@@ -34,7 +35,8 @@ class LowerCaseUrlSerializer extends DefaultUrlSerializer {
     VenueDetailComponent,
     CateringComponent,
     PackageDetailComponent,
-    ContactComponent
+    ContactComponent,
+    SpaceWithDashPipe
   ],
   imports: [
     BrowserModule,
