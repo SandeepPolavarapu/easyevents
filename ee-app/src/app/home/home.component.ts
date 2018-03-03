@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
   }
 
   showVenue(id,name){
-    location.href='../vijayawada/venue/'+id+name;
+    location.href='../vijayawada/venue/'+id+'/'+name.toLowerCase().split(' ').join('-');
   }
   
 }

@@ -95,7 +95,7 @@
                     </div>
                 </div>
                 <div class="caption">
-                    <h3><a class="hover-effect" href="../vijayawada/venue/{{item.Id}}/{{item.Name}}">{{item.Name}}</a></h3>
+                    <h3><a class="hover-effect" href="../vijayawada/venue/{{item.Id}}/{{item.Name | lowercase | spacewithdash}}">{{item.Name}}</a></h3>
                     <ul class="list-unstyled who margin-bottom-30">
                         <li><i class="fa fa-home"></i>{{item.Address}}, {{item.Area}}</li>
                         <li><i class="fa fa-phone"></i>{{item.Phone}}</li>                        
